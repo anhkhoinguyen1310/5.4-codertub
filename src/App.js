@@ -1,15 +1,16 @@
-import { Link, useParams } from "react-router-dom";
+//import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import { Switch, Route } from "react-router-dom";
 import React from 'react'
-import { Button, Container, Row, Card } from 'react-bootstrap';
+import { Container, } from 'react-bootstrap';
 import './App.css';
 import Navbar from './components/Navbar'
-
+//comment out the Link to deploy but why it 
+//2nd try to comment out the Link
 
 const API_KEY = process.env.REACT_APP_MOVIE_API_KEY
 function Homepage() {
-  const [Movies, setMovies] = useState([])
+  const [Movies] = useState([])
   const fetchMovies = async () => {
     const resp = await fetch (`https://api.themoviedb.org/3/movie/76341?api_key=${API_KEY}`,);
     const json = await resp.json()
