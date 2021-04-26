@@ -87,6 +87,7 @@ function splitNumber(arr) {
 
     useEffect(() => {
       getCategory(genres);
+      // eslint-disable-next-line 
     }, [genres])
 
 
