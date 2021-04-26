@@ -3,9 +3,7 @@ import { useState, useEffect } from 'react'
 import React from 'react'
 import SideBar from '../components/SideBar';
 import ModalBox from '../components/ModalBox';
-import {  Row, Col, Card, Nav, Button } from 'react-bootstrap';
-
-import {  Row, Col, Card, Nav } from 'react-bootstrap';
+import {  Row, Col, Card, Button } from 'react-bootstrap';
 
 const API_KEY = process.env.REACT_APP_MOVIE_API_KEY
 
@@ -124,7 +122,7 @@ function splitNumber(arr) {
                       <Card.Text style = {{height: 200, overflow: 'hidden', overflowY: "auto"}}>
                         {m.overview}
                       </Card.Text>
-                      <Nav.Link as={Link} to= {'/movie/' + m.id}  className = "btn btn-primary">View Details</Nav.Link>  
+                      <Button as={Link} to= {'/movie/' + m.id} style={{width: "100%"}} >View Details</Button>  
                       <Button 
                           onClick={() => onFetchYouTubeVideoId(m.id)}
                           style={{width: "100%"}} 
