@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import React from 'react'
 import SideBar from '../components/SideBar';
-import {  Row, Col, Card, Nav } from 'react-bootstrap';
+import ModalBox from '../components/ModalBox';
+import {  Row, Col, Card, Nav, Button } from 'react-bootstrap';
 // import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardImage,
     // MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn } from "mdbreact";
     
@@ -14,7 +15,8 @@ export default function Homepage() {
     const [genres, setGenres] = useState({genres: []});
     const [gen_ids, setGen_ids] = useState([]);
     const [moviesDefault, setMoviesDefault] = useState([]);
-    
+    const [modalOpen, setModalOpen] = useState(false);
+    const [movieTrailerKey, setMovieTrailerKey] = useState("");
 
 
     const fetchMovies = async () => {
@@ -73,6 +75,16 @@ function splitNumber(arr) {
         }
         setGen_ids(results);
     } 
+
+    const onFetchYouTubeVideoId = async (id) => {
+        const newUrl = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}`;
+        const resp = await fetch(newUrl);
+        const json = await resp.json();
+        if (json.results.length > 0) {
+            setMovieTrailerKey(json.results[0]);
+            setModalOpen(!modalOpen)
+        }
+    };
     
     // console.log(genres)
 
@@ -106,11 +118,16 @@ function splitNumber(arr) {
                     <Card className = "m-3"  style={{ width: '15rem' }}>
                     <Card.Img variant="top" src={'https://image.tmdb.org/t/p/w500/' + m.backdrop_path }/>
                     <Card.Body>
+                      <ModalBox  movieTrailerKey={movieTrailerKey} modalOpen={modalOpen} setModalOpen={setModalOpen}  />
                       <Card.Title>{m.title}</Card.Title>
                       <Card.Text style = {{height: 200, overflow: 'hidden', overflowY: "auto"}}>
                         {m.overview}
                       </Card.Text>
-                      <Nav.Link as={Link} to= {'/movie/' + m.id}  className = "btn btn-primary">View Details</Nav.Link>   
+                      <Nav.Link as={Link} to= {'/movie/' + m.id}  className = "btn btn-primary">View Details</Nav.Link>  
+                      <Button 
+                          onClick={() => onFetchYouTubeVideoId(m.id)}
+                          style={{width: "100%"}} 
+                          variant="primary" > Trailer </Button> 
                     </Card.Body>
                   </Card>
                   </Col>
