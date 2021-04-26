@@ -1,5 +1,290 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
   background-color: black;
 }
 
+/* Movie detail */
+
+
+.card-movie{
+    margin-top: 50px;
+    padding: 20px;
+    border: #ccc 3px solid;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start !important;
+    box-shadow: 0 10px 20px white;
+}
+
+.card-movie .img-content{
+    flex: 1;
+}
+
+.card-movie .text-content{
+    position:relative;
+    flex: 1;
+    padding: 0 30px;
+    color: white;
+}
+
+.text-content .genre-btn{
+    border-radius: 10px 10px;
+    border: none;
+    cursor: pointer;
+    background: rgb(111, 130, 224);
+    margin-right: 10px;
+    color: white;   
+}
+
+.text-content .genre-btn:hover{
+    background: rgb(76, 100, 219);
+    
+}
+
+.text-content div{
+    margin-bottom: 10px;
+}
+
+.text-content .overview{
+    height: 170px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.production{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.production .production-text{
+    border: 2px #ccc solid;
+    padding: 0 10px;
+    border-radius: 15px 15px;
+    margin-right: 10px; 
+}
+
+.production .production-text:hover{
+    background: #ccc;
+    color: white;
+}
+
+.production img{    
+    background: white;  
+    width: 70px;
+    margin: 5px 10px;
+}
+
+.production img:hover{
+    background: #ccc;
+    color: white;
+}
+
+.vote{
+    display:flex;
+    justify-content: space-between;
+}
+
+.form-comments{
+    border: 5px white double;
+    width: 100%;
+    height: 30vh;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: -5px;
+    left: 5px;
+}
+
+.form-comments .comment-list{
+    flex: 4;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+
+.form-comments .input{
+    flex: 1;
+    display: flex;
+    width: 100%;
+    margin-bottom: 0;
+    justify-content: space-between;
+}
+
+.form-comments .input input[type="text"]{
+    width: 80%;
+    height: 100%;
+    border: none;
+    padding: 0 0 0 20px;
+    border: 5px;
+    box-shadow: 0 5 10px #ccc;
+}
+
+
+.form-comments .input input[type="submit"]{
+    width: 20%;
+    border: 2px black solid;
+    background: white;
+    color: black;
+}
+
+.form-comments .input input[type="submit"]:hover{
+  color: white;
+  background: black;
+}
+
+
+.comment-list{
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+.comment-list .comment-item{
+    width: 90%;
+    padding: 0 15px;
+    border-bottom: 2px white dotted;
+    margin: 0px;
+
+}
+
+
+/* Homepage */
+
+
+
+.main-content{
+    position: relative;
+    width: 100%;
+    height: 120vh;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.main-content .sidebar{
+    flex: 1;
+    background: #ccc;    
+    height: 100%;
+    padding: 15px;
+    box-shadow: 0 4px 10px white;
+}
+.main-content .movies-content{
+    flex: 5;
+    height: 100%;
+    overflow:hidden;
+    overflow-y: auto;
+}
+
+
+  @media screen and (max-width: 1200px)  {
+
+
+    .main-content .sidebar {
+      flex: 1;
+    }
+    .main-content .movies-content {
+      flex: 3;
+    }
+  }
+
+  @media screen and (max-width: 800px)  {
+
+  .main-content{
+        flex-direction: column;
+    }
+    .main-content .sidebar {
+      width: 100%;
+
+    }
+    .main-content .movies-content {
+      width: 100%;
+    }
+  }
+
+
+.col{
+  display: flex;
+  justify-content: center;
+}
+
+/* Sidebar */
+
+
+.sidebar-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar-content .form-content{
+    flex: 1;
+    background: white;
+    border: 1px #ccc solid;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-content .form-content div{
+    flex: 1;
+    display: flex;
+    align-items:center;
+    padding: 10px 25px;
+    border-bottom: 1px #ccc solid;
+}
+
+.sidebar-content .category{
+    flex: 2;
+}
+
+
+.category{ 
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.gen-btn{
+    border: 1px #9F9FED solid;
+    background: #167AF6;
+    color: white;
+    border-radius: 3px;
+    margin-right:3px ;
+}
+
+.gen-btn:hover{
+    border: 1px black solid;
+    background: #0353b6;
+}
+
+.total{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 13px 0;
+}
+
+.total .total-btn{
+    border-radius: 3px;
+    border: none;
+    padding: 5px 10px;
+    background: crimson;
+    color: white;
+}
+
+.total .total-btn:hover{
+    border: crimson;
+    background: white;
+    color: crimson;
+
+}
