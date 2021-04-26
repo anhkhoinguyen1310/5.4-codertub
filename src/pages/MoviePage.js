@@ -54,7 +54,8 @@ export default function MoviePage() {
     
     useEffect(() => {
         fetchMovieData()
-    },[id])
+        // eslint-disable-next-line 
+    },[id]); 
 
     return (
         <div style={{height: "160vh"}}>

@@ -4,9 +4,9 @@ import React from 'react'
 import SideBar from '../components/SideBar';
 import ModalBox from '../components/ModalBox';
 import {  Row, Col, Card, Nav, Button } from 'react-bootstrap';
-// import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardImage,
-    // MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn } from "mdbreact";
-    
+
+import {  Row, Col, Card, Nav } from 'react-bootstrap';
+
 const API_KEY = process.env.REACT_APP_MOVIE_API_KEY
 
 
@@ -99,6 +99,7 @@ function splitNumber(arr) {
 
     useEffect(() => {
       getCategory(genres);
+      // eslint-disable-next-line 
     }, [genres])
 
 
@@ -143,155 +144,4 @@ function splitNumber(arr) {
     )
 }
 
-
-/* <Carousel>
-  <Carousel.Item>
-    <img
-      className="d-block w-100"
-      src={'https://image.tmdb.org/t/p/w500/' + m.backdrop_path }
-      alt="First slide"
-    />
-    <Carousel.Caption>
-      <h3>{m.title}</h3>
-      <p>{m.overview}</p>
-    </Carousel.Caption>
-  </Carousel.Item>
-</Carousel> */
-
-
-// const MultiCarouselPage = () => {
-//   return (
-//     <MDBContainer>
-//       <MDBCarousel activeItem={1} length={3} slide={true} showControls={true} showIndicators={true} multiItem>
-//         <MDBCarouselInner>
-//           <MDBRow>
-//             <MDBCarouselItem itemId="1">
-//               <MDBCol md="4">
-//                 <MDBCard className="mb-2">
-//                   <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" />
-//                   <MDBCardBody>
-//                     <MDBCardTitle>MDBCard title</MDBCardTitle>
-//                     <MDBCardText>
-//                       Some quick example text to build on the card title and
-//                       make up the bulk of the card's content.
-//                     </MDBCardText>
-//                     <MDBBtn color="primary">MDBBtn</MDBBtn>
-//                   </MDBCardBody>
-//                 </MDBCard>
-//               </MDBCol>
-//               <MDBCol md="4">
-//                 <MDBCard className="mb-2">
-//                   <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" />
-//                   <MDBCardBody>
-//                     <MDBCardTitle>MDBCard title</MDBCardTitle>
-//                     <MDBCardText>
-//                       Some quick example text to build on the card title and
-//                       make up the bulk of the card's content.
-//                     </MDBCardText>
-//                     <MDBBtn color="primary">MDBBtn</MDBBtn>
-//                   </MDBCardBody>
-//                 </MDBCard>
-//               </MDBCol>
-//               <MDBCol md="4">
-//                 <MDBCard className="mb-2">
-//                   <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" />
-//                   <MDBCardBody>
-//                     <MDBCardTitle>MDBCard title</MDBCardTitle>
-//                     <MDBCardText>
-//                       Some quick example text to build on the card title and
-//                       make up the bulk of the card's content.
-//                     </MDBCardText>
-//                     <MDBBtn color="primary">MDBBtn</MDBBtn>
-//                   </MDBCardBody>
-//                 </MDBCard>
-//               </MDBCol>
-//             </MDBCarouselItem>
-//             <MDBCarouselItem itemId="2">
-//               <MDBCol md="4">
-//                 <MDBCard className="mb-2">
-//                   <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(60).jpg" />
-//                   <MDBCardBody>
-//                     <MDBCardTitle>MDBCard title</MDBCardTitle>
-//                     <MDBCardText>
-//                       Some quick example text to build on the card title and
-//                       make up the bulk of the card's content.
-//                     </MDBCardText>
-//                     <MDBBtn color="primary">MDBBtn</MDBBtn>
-//                   </MDBCardBody>
-//                 </MDBCard>
-//               </MDBCol>
-//               <MDBCol md="4">
-//                 <MDBCard className="mb-2">
-//                   <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(47).jpg" />
-//                   <MDBCardBody>
-//                     <MDBCardTitle>MDBCard title</MDBCardTitle>
-//                     <MDBCardText>
-//                       Some quick example text to build on the card title and
-//                       make up the bulk of the card's content.
-//                     </MDBCardText>
-//                     <MDBBtn color="primary">MDBBtn</MDBBtn>
-//                   </MDBCardBody>
-//                 </MDBCard>
-//               </MDBCol>
-//               <MDBCol md="4">
-//                 <MDBCard className="mb-2">
-//                   <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(48).jpg" />
-//                   <MDBCardBody>
-//                     <MDBCardTitle>MDBCard title</MDBCardTitle>
-//                     <MDBCardText>
-//                       Some quick example text to build on the card title and
-//                       make up the bulk of the card's content.
-//                     </MDBCardText>
-//                     <MDBBtn color="primary">MDBBtn</MDBBtn>
-//                   </MDBCardBody>
-//                 </MDBCard>
-//               </MDBCol>
-//             </MDBCarouselItem>
-//             <MDBCarouselItem itemId="3">
-//               <MDBCol md="4">
-//                 <MDBCard className="mb-2">
-//                   <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(53).jpg" />
-//                   <MDBCardBody>
-//                     <MDBCardTitle>MDBCard title</MDBCardTitle>
-//                     <MDBCardText>
-//                       Some quick example text to build on the card title and
-//                       make up the bulk of the card's content.
-//                     </MDBCardText>
-//                     <MDBBtn color="primary">MDBBtn</MDBBtn>
-//                   </MDBCardBody>
-//                 </MDBCard>
-//               </MDBCol>
-//               <MDBCol md="4">
-//                 <MDBCard className="mb-2">
-//                   <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(45).jpg" />
-//                   <MDBCardBody>
-//                     <MDBCardTitle>MDBCard title</MDBCardTitle>
-//                     <MDBCardText>
-//                       Some quick example text to build on the card title and
-//                       make up the bulk of the card's content.
-//                     </MDBCardText>
-//                     <MDBBtn color="primary">MDBBtn</MDBBtn>
-//                   </MDBCardBody>
-//                 </MDBCard>
-//               </MDBCol>
-//               <MDBCol md="4">
-//                 <MDBCard className="mb-2">
-//                   <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(41).jpg" />
-//                   <MDBCardBody>
-//                     <MDBCardTitle>MDBCard title</MDBCardTitle>
-//                     <MDBCardText>
-//                       Some quick example text to build on the card title and
-//                       make up the bulk of the card's content.
-//                     </MDBCardText>
-//                     <MDBBtn color="primary">MDBBtn</MDBBtn>
-//                   </MDBCardBody>
-//                 </MDBCard>
-//               </MDBCol>
-//             </MDBCarouselItem>
-//           </MDBRow>
-//         </MDBCarouselInner>
-//       </MDBCarousel>
-//     </MDBContainer>
-//   );
-// }
 
